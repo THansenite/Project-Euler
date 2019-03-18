@@ -7,12 +7,12 @@ namespace SolutionTests
     [TestClass]
     public class Problem001Tests
     {
-        private Problem001 _problem1;
+        private SolutionLogic _logic;
 
         [TestInitialize]
         public void Initialize()
         {
-            _problem1 = new Problem001();
+            _logic = new SolutionLogic();
         }
 
         [TestMethod]
@@ -20,7 +20,7 @@ namespace SolutionTests
         {
             var iterations = 0;
 
-            int result = _problem1.MultiplesOf3and5(iterations);
+            int result = _logic.MultiplesOf3and5(iterations);
 
             Assert.AreEqual(0, result);
         }
@@ -30,7 +30,7 @@ namespace SolutionTests
         {
             var iterations = 10;
 
-            int result = _problem1.MultiplesOf3and5(iterations);
+            int result = _logic.MultiplesOf3and5(iterations);
 
             Assert.AreEqual(23, result);
         }

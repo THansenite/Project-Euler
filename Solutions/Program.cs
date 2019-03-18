@@ -19,6 +19,10 @@ namespace Solutions
             Problem002 problem2 = new Problem002();
             var result2 = problem2.EvenFibonacci(4000000);
             //PrintOutput("Problem 2: ", result2.ToString());
+
+            //Problem 3
+            Problem003 problem3 = new Problem003();
+            var result3 = problem3.LargestPrimeFactor(600851475143);
         }
 
         private static void PrintOutput(string problem, string answer)

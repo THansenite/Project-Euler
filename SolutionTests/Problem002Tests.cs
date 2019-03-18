@@ -19,10 +19,8 @@ namespace SolutionTests
         public void NoNumbers()
         {
             var maxValue = 0;
-
-            var result = _problem2.EvenFibonacci(maxValue);
-
-            Assert.AreEqual(0, result);
+            
+            Assert.AreEqual(0, RunProblem(maxValue));
         }
 
         [TestMethod]
@@ -30,9 +28,12 @@ namespace SolutionTests
         {
             var maxValue = 90;
 
-            var result = _problem2.EvenFibonacci(maxValue);
+            Assert.AreEqual(44, RunProblem(maxValue));
+        }
 
-            Assert.AreEqual(44, result);
+        private int RunProblem(int maxValue)
+        {
+            return (_problem2.EvenFibonacci(maxValue));
         }
     }
 }
