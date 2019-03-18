@@ -10,6 +10,21 @@ namespace Solutions
     {
         static void Main(string[] args)
         {
+            //Problem 1
+            Problem001 problem1 = new Problem001();
+            var result1 = problem1.MultiplesOf3and5(1000);
+            //PrintOutput("Problem 1: ", result1.ToString());
+
+            //Problem 2
+            Problem002 problem2 = new Problem002();
+            var result2 = problem2.EvenFibonacci(4000000);
+            //PrintOutput("Problem 2: ", result2.ToString());
+        }
+
+        private static void PrintOutput(string problem, string answer)
+        {
+            Console.WriteLine(problem + answer);
+            Console.ReadKey();
         }
     }
 }
