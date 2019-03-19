@@ -11,7 +11,7 @@ namespace Solutions
         static void Main(string[] args)
         {
             SolutionLogic sl = new SolutionLogic();
-            
+
             //Problem 1
             //var result1 = sl.MultiplesOf3and5(1000);
             //PrintOutput(1, result1.ToString());
@@ -26,8 +26,16 @@ namespace Solutions
             //PrintOutput(3, result2.ToString());
 
             //Problem 4
-            //var result3 = sl.LargestPalendromeFactor(999);
+            //var result4 = sl.LargestPalendromeFactor(999);
             //PrintOutput(4, result3.ToString());
+
+            //Problem 5
+            //var result5 = sl.SmallestMultiple(20);
+            //PrintOutput(5, result5.ToString());
+
+            //Problem 6
+            var result6 = sl.SumSquareDifference(100);
+            PrintOutput(6, result6.ToString());
         }
 
         private static void PrintOutput(int problemNumber, string answer)

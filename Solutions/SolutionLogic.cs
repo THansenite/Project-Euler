@@ -105,5 +105,48 @@ namespace Solutions
             return charArray.SequenceEqual(charArray.Reverse().ToList());
         }
         #endregion
+
+        #region Question5
+        public int SmallestMultiple(int maxDivisor)
+        {
+            var value = maxDivisor;
+
+            while (!AllNumbersDivide(maxDivisor, value))
+            {
+                value++;
+            }
+
+            return value;
+        }
+        private bool AllNumbersDivide(int maxDivisor, int value)
+        {
+            for (int i = 1; i <= maxDivisor; i++)
+            {
+                if (value % i != 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        #endregion
+
+        #region Question6
+        public int SumSquareDifference(int value)
+        {
+            var sumTotal = 0;
+            var sumOfSquares = 0;
+
+            for (int i = 1; i <= value; i++)
+            {
+                sumTotal += i;
+                sumOfSquares += i * i;
+            }
+
+            sumTotal = sumTotal * sumTotal;
+
+            return sumTotal - sumOfSquares;
+        }
+        #endregion
     }
 }
