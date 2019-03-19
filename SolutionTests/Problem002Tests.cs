@@ -7,12 +7,12 @@ namespace SolutionTests
     [TestClass]
     public class Problem002Tests
     {
-        private Problem002 _problem2;
+        private SolutionLogic _problem2;
 
         [TestInitialize]
         public void Initialize()
         {
-            _problem2 = new Problem002();
+            _problem2 = new SolutionLogic();
         }
 
         [TestMethod]

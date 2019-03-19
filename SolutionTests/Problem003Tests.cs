@@ -7,12 +7,12 @@ namespace SolutionTests
     [TestClass]
     public class Problem003Tests
     {
-        private Problem003 _problem3;
+        private SolutionLogic _problem3;
 
         [TestInitialize]
         public void Initialize()
         {
-            _problem3 = new Problem003();
+            _problem3 = new SolutionLogic();
         }
 
         [TestMethod]
@@ -23,21 +23,46 @@ namespace SolutionTests
             Assert.AreEqual(0, result);
         }
 
-        public void SmallValue()
+        [TestMethod]
+        public void PrimeValuePassedIn()
         {
-            var result = RunProblem(10);
+            var result = RunProblem(5);
 
             Assert.AreEqual(5, result);
         }
 
         [TestMethod]
-        public void Example()
+        public void SmallValue_SinglePrimeFactor()
+        {
+            var result = RunProblem(9);
+
+            Assert.AreEqual(3, result);
+        }
+
+        [TestMethod]
+        public void SmallValue_MultiplePrimeFactos()
+        {
+            var result = RunProblem(15);
+
+            Assert.AreEqual(5, result);
+        }
+
+        [TestMethod]
+        public void MediumValue_MultiplePrimeFactos()
+        {
+            var result = RunProblem(81);
+
+            Assert.AreEqual(27, result);
+        }
+
+        [TestMethod]
+        public void EulerExample()
         {
             var result = RunProblem(13195);
 
-            Assert.AreEqual(29, result);
+            Assert.AreEqual(2639, result);
         }
-
+        
         private int RunProblem(int maxValue)
         {
             return _problem3.LargestPrimeFactor(maxValue);
