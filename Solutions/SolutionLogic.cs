@@ -46,32 +46,30 @@ namespace Solutions
         }
         #endregion
 
+        //TODO: Question 3
         #region Question3
-        public int LargestPrimeFactor(int valueToCheck)
+        public long LargestPrimeFactor(long initialValue)
         {
-            return FindFactors(valueToCheck, 0);
-        }
-
-        private int FindFactors(int value, int largestPrime)
-        {
-            for (int i = 2; i < value; i++)
+            for (long i = initialValue - 1; i > 0; i--)
             {
-                if (value % i == 0)
+                if (initialValue % i == 0)
                 {
-                    var test = FindFactors(i, largestPrime);
-                    if (i > largestPrime)
+                    if (i == 1)
                     {
-                        largestPrime = i;
+                        // number is prime factor
+                        return initialValue;
                     }
+                    else if (i > 1)
+                    {
+                        return i;
+                    }
+
                 }
             }
-            if (largestPrime == 0)
-            {
-                largestPrime = value;
-            }
 
-            return largestPrime;
+            return 0;
         }
+        
         #endregion
 
         #region Question4
@@ -146,6 +144,36 @@ namespace Solutions
             sumTotal = sumTotal * sumTotal;
 
             return sumTotal - sumOfSquares;
+        }
+        #endregion
+
+        // TODO: Question 7
+        #region Question7
+
+        #endregion
+
+        #region Question8
+        public int LargestProductInSeries(int adjacentChars, string inputValue)
+        {
+            var chars = inputValue.ToCharArray();
+            var productList = new List<int>();
+
+            for (int i = 0; i <= chars.Length - adjacentChars; i++)
+            {
+                var product = 1;
+
+                for (int j = 0; j < adjacentChars; j++)
+                {
+                    var value = chars.ElementAt(i + j);
+                    product *= int.Parse(value.ToString());
+                }
+                // add all products to a list and run max 
+                //Console.WriteLine(product);
+                productList.Add(product);
+
+            }
+
+            return productList.Max();
         }
         #endregion
     }

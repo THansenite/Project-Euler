@@ -63,7 +63,7 @@ namespace SolutionTests
             Assert.AreEqual(2639, result);
         }
         
-        private int RunProblem(int maxValue)
+        private long RunProblem(long maxValue)
         {
             return _problem3.LargestPrimeFactor(maxValue);
         }

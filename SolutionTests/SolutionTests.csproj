@@ -56,6 +56,7 @@
     <Compile Include="Problem003Tests.cs" />
     <Compile Include="Problem004Tests.cs" />
     <Compile Include="Problem006Tests.cs" />
+    <Compile Include="Problem008Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
