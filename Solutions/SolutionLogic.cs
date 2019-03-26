@@ -153,26 +153,23 @@ namespace Solutions
         #endregion
 
         #region Question8
-        public int LargestProductInSeries(int adjacentChars, string inputValue)
+        public long LargestProductInSeries(int adjacentChars, string inputValue)
         {
             var chars = inputValue.ToCharArray();
-            var productList = new List<int>();
+            var productList = new List<long>();
 
             for (int i = 0; i <= chars.Length - adjacentChars; i++)
             {
-                var product = 1;
+                long product = 1;
 
                 for (int j = 0; j < adjacentChars; j++)
                 {
                     var value = chars.ElementAt(i + j);
                     product *= int.Parse(value.ToString());
                 }
-                // add all products to a list and run max 
-                //Console.WriteLine(product);
+
                 productList.Add(product);
-
             }
-
             return productList.Max();
         }
         #endregion
