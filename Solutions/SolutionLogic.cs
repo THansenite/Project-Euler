@@ -198,5 +198,32 @@ namespace Solutions
             return 0;
         }
         #endregion
+
+        //TODO: Questions 10-12
+
+        #region Question13
+        public long LargeSum(IList<string> numbers, int digits)
+        {
+            long sum = 0;
+
+            foreach (var item in numbers)
+            {
+                var checkLength = 0;
+
+                if (item.Length <= digits + 3)
+                    checkLength = item.Length;
+                else
+                    checkLength = digits + 3;
+
+                var truncVal = item.Substring(0, checkLength);
+
+                sum += long.Parse(truncVal);
+            }
+
+            var stringSum = sum.ToString();
+
+            return long.Parse(stringSum.Substring(0, digits));
+        }
+        #endregion
     }
 }
