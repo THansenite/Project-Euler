@@ -225,5 +225,52 @@ namespace Solutions
             return long.Parse(stringSum.Substring(0, digits));
         }
         #endregion
+
+        #region Question14
+        public int LongestCollatzSequence(int maxValue, int minValue)
+        {
+            var mostSteps = 0;
+            var stepValue = 0;
+
+            for (int i = maxValue; i >= minValue; i--)
+            {
+                var steps = GetCollatzSteps(i);
+
+                if (steps > mostSteps)
+                {
+                    mostSteps = steps;
+                    stepValue = i;
+                }
+            }
+            return stepValue;
+        }
+
+        private int GetCollatzSteps(int value)
+        {
+            var totalSteps = 0;
+            long currValue = value;
+
+            for (int s = 1; currValue > 1; s++)
+            {
+                currValue = (currValue % 2 == 0) ? DoEven(currValue) : DoOdd(currValue);
+                totalSteps = s;
+            }
+            return totalSteps;
+        }
+
+        private long DoEven(long value)
+        {
+            return value/2;
+        }
+
+        private long DoOdd(long value)
+        {
+            return 3 * value + 1;
+        }
+        #endregion
+
+        #region Question15
+
+        #endregion
     }
 }
