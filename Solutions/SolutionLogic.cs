@@ -173,5 +173,30 @@ namespace Solutions
             return productList.Max();
         }
         #endregion
+
+        #region Question9
+        public int PythagoreanTriplet(int sideSum)
+        {
+            for (int a = 1; a < sideSum; a++)
+            {
+                var b = a;
+                var c = 0.0;
+
+                do
+                {
+                    b++;
+                    var cSquared = a*a + b*b;
+                    c = Math.Sqrt(cSquared);
+                } while (a+b+c < sideSum);
+
+                if (a+b+c == sideSum)
+                {
+                    return (a * b * Convert.ToInt32(c));
+                }
+            }
+
+            return 0;
+        }
+        #endregion
     }
 }
